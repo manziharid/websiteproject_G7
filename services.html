@@ -14,13 +14,14 @@
             document.getElementById(id).innerHTML = html;
         });
     }
-
     window.onload = () => {
+        loadComponents('header', 'src/sections/header.html');
         loadComponents('service', 'src/sections/service.html');
         loadComponents('footer', 'src/sections/footer.html');
     }
 </script>
-<body>
+<body class="text-[#00672E]">
+    <div id="header"></div>
     <div id="service"></div>
     <div id="footer"></div>
 </body>
