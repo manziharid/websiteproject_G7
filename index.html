@@ -28,6 +28,21 @@
     }
 });
 
+   function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('menu-toggle-btn');
+    const isOpen = !menu.classList.contains('hidden');
+
+    if (isOpen) {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        btn.src = '/image/Group 5.png';
+    } else {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        btn.src = 'Group 4.png';
+    }
+}
 
     window.onload = () => {
         loadComponents('header', 'src/sections/header.html');
@@ -36,7 +51,7 @@
         loadComponents('footer', 'src/sections/footer.html');
         loadComponents('About', 'src/sections/About.html');    }
 </script>
-<body>
+<body class="bg-[#EFECEA]">
     <div id="header"></div>
     <div id="hero"></div>
     <div id="feature"></div>
