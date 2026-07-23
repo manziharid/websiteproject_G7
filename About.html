@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <title>Website project template</title>
+</head>
+<script>
+    const sections = [
+        { id: 'contact', url: 'src/sections/contact.html' },
+    ];
+
+    const loadComponent = async ({ id, url }) => {
+        const target = document.getElementById(id);
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+            target.innerHTML = await res.text();
+        } catch (err) {
+            console.error(err);
+            target.innerHTML = `<!-- failed to load ${url} -->`;
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        sections.forEach(loadComponent);
+    });
+</script>
+<body>
+    <div id="contact"></div>
+</body>
+</html>
