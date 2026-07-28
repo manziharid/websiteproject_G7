@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Website project template</title>
 </head>
 <script>
@@ -17,19 +18,49 @@
             document.getElementById(id).innerHTML = html;
         });
     }
+    
+    window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("bg-transparent");
+        navbar.classList.remove("bg-white");
+    } else {
+        navbar.classList.add("bg-white");
+        navbar.classList.remove("bg-transparent");
+    }
+});
+
+   function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('menu-toggle-btn');
+    const isOpen = !menu.classList.contains('hidden');
+
+    if (isOpen) {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        btn.src = '/image/Group 5.png';
+    } else {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        btn.src = 'Group 4.png';
+    }
+}
 
     window.onload = () => {
         loadComponents('header', 'src/sections/header.html');
         loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('contact', 'src/sections/contact.html');
+        loadComponents('feature', 'src/sections/feature.html');
         loadComponents('footer', 'src/sections/footer.html');
-    }
+        loadComponents('About', 'src/sections/About.html');  
+  }
 </script>
 <script src="src/scripts/hero-parallax.js" defer></script>
 <body>
+<body class="bg-[#EFECEA]">
     <div id="header"></div>
     <div id="hero"></div>
-    <div id="contact"></div>
+    <div id="feature"></div>
     <div id="footer"></div>
 </body>
 </html>
