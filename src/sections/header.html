@@ -5,32 +5,104 @@
     </div>
     <div>
         <p class="font-extrabold text-3xl">Baumeister</p>
-    </div>   
+    </div>
     <div>
         <nav class="hidden lg:block md:block">
-    <ul class="flex flex-col ">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#reference">References</a></li>
-        <li><a href="About.html">Contact</a></li>
-    </ul>
-</nav>
-    <img
-        id="menu-toggle-btn"
-        src="/image/Group 5.png"
-        alt="Menu"
-        class="w-[39px] h-[23px] rounded-lg block lg:hidden md:hidden cursor-pointer"
-        onclick="toggleMobileMenu()"
-    >
+            <ul class="flex flex-col">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reference">References</a></li>
+                <li><a href="About.html">Contact</a></li>
+            </ul>
+        </nav>
+        <img
+            id="menu-toggle-btn"
+            src="/image/Group 5.png"
+            alt="Menu"
+            class="w-[39px] h-[23px] rounded-lg block lg:hidden md:hidden cursor-pointer"
+            onclick="toggleMobileMenu()"
+        >
     </div>
 </div>
-<div id="mobile-menu" class="hidden fixed inset-0 bg-[#f0ede6] z-40 flex-col items-center justify-center gap-8">
-    <nav>
-        <ul class="flex flex-col items-center gap-8 text-2xl font-bold text-green-700">
+
+<div
+    id="mobile-menu"
+    class="hidden fixed inset-0 z-40 flex-col items-center bg-[#f0ede6] overflow-hidden"
+>
+    <!-- top bar inside menu: DE/EN + close button -->
+    <div class="absolute top-0 left-0 w-full flex justify-between items-center px-7 py-4 z-20">
+        <div class="text-sm">
+            <p>DE</p>
+            <p>EN</p>
+        </div>
+        <button
+            onclick="toggleMobileMenu()"
+            aria-label="Close menu"
+            class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center text-lg"
+        >
+            &times;
+        </button>
+    </div>
+
+    <!-- nav links -->
+    <nav class="relative z-10 mt-28">
+        <ul class="flex flex-col items-center gap-6 text-2xl font-bold text-green-700">
             <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
             <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
             <li><a href="#reference" onclick="toggleMobileMenu()">References</a></li>
             <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- shape collage, pinned to bottom — mobile & tablet only -->
+    <div class="absolute bottom-0 left-0 w-full aspect-[2/3] z-0 lg:hidden">
+
+        <img
+            src="/src/assets/vector 4.png"
+            alt=""
+            data-stack-shape
+            data-shape="yellow"
+            class="absolute left-0 top-[50%] w-[76.14%] z-0"
+        />
+
+        <img
+            src="/src/assets/vector 5.png"
+            alt=""
+            data-stack-shape
+            data-shape="green-right"
+            class="absolute left-[57.42%] top-[63.60%] w-[42.57%] z-10"
+        />
+
+        <img
+            src="/src/assets/vector 6.png"
+            alt=""
+            data-stack-shape
+            data-shape="pink"
+            class="absolute left-[64.29%] top-[42.15%] w-[24.75%] z-10"
+        />
+
+        <img
+            src="/src/assets/vector 1.png"
+            alt=""
+            data-stack-shape
+            data-shape="blue"
+            class="absolute left-[28.71%] top-[57.17%] w-[67.84%] z-20"
+        />
+
+        <img
+            src="/src/assets/vector 3.png"
+            alt=""
+            data-stack-shape
+            data-shape="red"
+            class="absolute left-[20.82%] top-[80.11%] w-[75.66%] z-30"
+        />
+
+        <img
+            src="/src/assets/vector 2.png"
+            alt=""
+            data-stack-shape
+            data-shape="green-center"
+            class="absolute left-[2.54%] top-[52.87%] w-[54.95%] z-40"
+        />
+    </div>
 </div>
