@@ -9,9 +9,7 @@
 </head>
 <script>
     const loadComponents = (id, url) =>  {
-        // cache: 'no-store' + a cache-busting query param so edits to these
-        // section files always show up on a normal refresh instead of
-        // silently serving a stale cached copy.
+        
         fetch(url + '?v=' + Date.now(), { cache: 'no-store' })
         .then((response) => response.text())
         .then((html) => {
