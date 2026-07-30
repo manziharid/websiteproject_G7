@@ -1,21 +1,39 @@
-<div class="bg-[#EFECEA] text-[#00672E] ">
-  <div class="bg-[#EFECEA]">
-  <div class="flex justify-between py-2 items-center text-sm/3 ml-14 mr-10">
+<div id="navbar" class="fixed top-0 left-0 w-full z-50 bg-[#EFECEA] transition-all duration-300 flex justify-between items-center px-7 py-2 text-sm">
     <div>
-      <p>DE</p>
-      <p>EN</p>
+        <p>DE</p>
+        <p>EN</p>
     </div>
-    <p class="font-bold text-xl">Baumeister</p>
-    <div class="hidden sm:block">
-      <ul class="grid gap-2">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="references.html">References</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div>
+        <p class="font-extrabold text-3xl">Baumeister</p>
+    </div>   
+    <div>
+        <nav class="hidden lg:block md:block">
+            <ul class="flex flex-col">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reference">References</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <img
+            id="menu-toggle-btn"
+            src="Group 5 (2).png"
+            alt="Menu"
+            class="w-[39px] h-[23px] rounded-lg block lg:hidden md:hidden cursor-pointer"
+            onclick="toggleMobileMenu()"
+        >
     </div>
-    <img src="Group 5 (2).png" alt="" class="w-[39px] h-[23px] rounded-lg block lg:hidden md:hidden">
-  </div>
+</div>
+
+<div id="mobile-menu" class="hidden fixed left-0 w-full h-full bg-[#EFECEA] z-40 flex-col items-center justify-center gap-8" style="top: 0; padding-top: 60px;">
+    <nav>
+        <ul class="flex flex-col items-center gap-8 text-2xl font-bold text-green-700">
+            <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
+            <li><a href="#reference" onclick="toggleMobileMenu()">References</a></li>
+            <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        </ul>
+    </nav>
 </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8 ml-15 mr-15">
     <div class="flex flex-col gap-6 text-2xl md:text-base">
