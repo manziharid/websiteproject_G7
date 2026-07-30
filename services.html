@@ -19,9 +19,23 @@
         loadComponents('service', 'src/sections/service.html');
         loadComponents('footer', 'src/sections/footer.html');
     }
+     function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('menu-toggle-btn');
+    const isOpen = !menu.classList.contains('hidden');
+
+    if (isOpen) {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        btn.src = '/image/Group 5.png';
+    } else {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        btn.src = 'Group 4.png';
+    }
+}
 </script>
 <body class="text-[#00672E]">
-    <div id="header"></div>
     <div id="service"></div>
     <div id="footer"></div>
 </body>
