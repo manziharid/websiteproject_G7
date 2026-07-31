@@ -113,7 +113,7 @@
 
       const exitDistance = Math.max(ALIGN_DISTANCE, commonLineStart);
       const totalDistance = triggerRed + exitDistance;
-      spacer.style.height = naturalHeight + totalDistance + "px";
+      //  spacer.style.height = naturalHeight + totalDistance + "px";
 
       spacerDocTop = spacer.getBoundingClientRect().top + window.scrollY;
 
