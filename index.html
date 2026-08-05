@@ -9,8 +9,7 @@
 </head>
 <script>
     const loadComponents = (id, url) =>  {
-        
-        fetch(url + '?v=' + Date.now(), { cache: 'no-store' })
+        return fetch(url + '?v=' + Date.now(), { cache: 'no-store' })
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
@@ -46,11 +45,20 @@
 }
 
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('feature', 'src/sections/feature.html');
-        loadComponents('footer', 'src/sections/footer.html');
-        loadComponents('About', 'src/sections/About.html');  
+        Promise.all([
+            loadComponents('header', 'src/sections/header.html'),
+            loadComponents('hero', 'src/sections/hero.html'),
+            loadComponents('feature', 'src/sections/feature.html'),
+            loadComponents('footer', 'src/sections/footer.html'),
+            loadComponents('About', 'src/sections/About.html'),
+        ]).then(() => {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
   }
 </script>
 <script src="src/scripts/hero-parallax.js" defer></script>
