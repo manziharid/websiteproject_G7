@@ -3,11 +3,16 @@
         <p>DE</p>
         <p>EN</p>
     </div>
-    <div>
-        <p class="font-extrabold text-3xl">
-          <a href="index.html">Baumeister</a>
-        </p>
-    </div>
+    <div class="hidden lg:block">
+    <p class="font-extrabold text-3xl"><a href="index.html">Baumeister</a></p>
+</div>
+
+
+<div class="lg:hidden bg-cover bg-center bg-no-repeat flex items-center justify-center w-[12rem]"
+  style="background-image: url('vector 5 (1).png');"
+>
+    <p class="font-extrabold text-3xl"><a href="index.html">Baumeister</a></p>
+</div>
     <div>
         <nav class="hidden lg:block md:hidden">
             <ul class="flex flex-col">
@@ -19,7 +24,7 @@
         </nav>
         <img
             id="menu-toggle-btn"
-            src="/image/Group 5.png"
+            src="/image/Group 5 (2).png"
             alt="Menu"
             class="w-[39px] h-[23px] rounded-lg block lg:hidden md:block cursor-pointer"
             onclick="toggleMobileMenu()"
